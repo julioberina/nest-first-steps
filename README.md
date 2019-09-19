@@ -30,11 +30,21 @@
 
 ## Installation
 
+With npm:
+
 ```bash
 $ npm install
 ```
 
+With yarn:
+
+```bash
+yarn install
+```
+
 ## Running the app
+
+With npm:
 
 ```bash
 # development
@@ -47,7 +57,22 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+With yarn:
+
+```bash
+# development
+$ yarn run start
+
+# watch mode
+$ yarn run start:dev
+
+# production mode
+$ yarn run start:prod
+```
+
 ## Test
+
+With npm:
 
 ```bash
 # unit tests
@@ -58,6 +83,19 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+```
+
+With yarn:
+
+```bash
+# unit tests
+$ yarn run test
+
+# e2e tests
+$ yarn run test:e2e
+
+# test coverage
+$ yarn run test:cov
 ```
 
 ## Support
