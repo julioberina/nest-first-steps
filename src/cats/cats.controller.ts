@@ -1,11 +1,15 @@
 import { Get, Post, Controller, Param, Body, Put, Delete } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
+import { CatsService } from './cats.service';
+import { Cats } from './interfaces/cats.interface';
 
 @Controller('cats')
 export class CatsController {
+    constructor(private readonly catsService: CatsService) {}
+
     @Get()
-    async findAll(): Promise<string[]> {
-        return ['Cat 1', 'Cat 2', 'Cat 3'];
+    async findAll(): Promise<Cats[]> {
+        return this.catsService.findAll();
     }
 
     @Get(':id')
@@ -15,6 +19,7 @@ export class CatsController {
 
     @Post()
     async create(@Body() cat: CreateCatDto): Promise<string> {
+        this.catsService.create(cat);
         return `${cat.name} is ${cat.age} years old and is a ${cat.breed}`;
     }
 
