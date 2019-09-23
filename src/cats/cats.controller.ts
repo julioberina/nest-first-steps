@@ -18,9 +18,9 @@ export class CatsController {
     }
 
     @Post()
-    async create(@Body() cat: CreateCatDto): Promise<string> {
+    async create(@Body() cat: CreateCatDto): Promise<boolean> {
         this.catsService.create(cat);
-        return `${cat.name} is ${cat.age} years old and is a ${cat.breed}`;
+        return true;
     }
 
     @Put(':id')
